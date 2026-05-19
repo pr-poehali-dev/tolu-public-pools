@@ -502,17 +502,11 @@ function LogoMark() {
       position: "absolute", bottom: 16, right: 20,
       opacity: 0.12,
     }}>
-      <LogoDark size={32} />
+      <img
+        src={LOGO}
+        alt=""
+        style={{ height: 32, width: "auto", objectFit: "contain" }}
+      />
     </div>
-  );
-}
-
-function LogoDark({ size = 32 }: { size?: number }) {
-  return (
-    <img
-      src={LOGO}
-      alt=""
-      style={{ height: size, width: "auto", objectFit: "contain" }}
-    />
   );
 }
