@@ -100,15 +100,28 @@ export default function Index() {
             ))}
           </div>
 
-          <button
-            onClick={() => scrollTo("contacts")}
-            className="hidden md:block btn-primary text-xs"
-            style={{ background: "hsl(196 60% 45%)", color: "hsl(210 20% 6%)", padding: "10px 24px", letterSpacing: "0.15em", fontSize: "0.65rem", textTransform: "uppercase", fontWeight: 500, transition: "all 0.3s", border: "1px solid transparent" }}
-            onMouseEnter={e => { (e.target as HTMLElement).style.background = "transparent"; (e.target as HTMLElement).style.color = "hsl(196 60% 45%)"; (e.target as HTMLElement).style.borderColor = "hsl(196 60% 45%)"; }}
-            onMouseLeave={e => { (e.target as HTMLElement).style.background = "hsl(196 60% 45%)"; (e.target as HTMLElement).style.color = "hsl(210 20% 6%)"; (e.target as HTMLElement).style.borderColor = "transparent"; }}
-          >
-            Заказать проект
-          </button>
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="/presentation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+              style={{ background: "transparent", color: "hsl(210 10% 60%)", padding: "10px 18px", letterSpacing: "0.12em", fontSize: "0.65rem", textTransform: "uppercase", fontWeight: 500, transition: "all 0.3s", border: "1px solid rgba(255,255,255,0.15)", textDecoration: "none" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "hsl(196 60% 45%)"; (e.currentTarget as HTMLElement).style.color = "hsl(196 60% 45%)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.15)"; (e.currentTarget as HTMLElement).style.color = "hsl(210 10% 60%)"; }}
+            >
+              <Icon name="FileDown" size={13} />
+              Презентация
+            </a>
+            <button
+              onClick={() => scrollTo("contacts")}
+              style={{ background: "hsl(196 60% 45%)", color: "hsl(210 20% 6%)", padding: "10px 24px", letterSpacing: "0.15em", fontSize: "0.65rem", textTransform: "uppercase", fontWeight: 500, transition: "all 0.3s", border: "1px solid transparent", cursor: "pointer" }}
+              onMouseEnter={e => { (e.target as HTMLElement).style.background = "transparent"; (e.target as HTMLElement).style.color = "hsl(196 60% 45%)"; (e.target as HTMLElement).style.borderColor = "hsl(196 60% 45%)"; }}
+              onMouseLeave={e => { (e.target as HTMLElement).style.background = "hsl(196 60% 45%)"; (e.target as HTMLElement).style.color = "hsl(210 20% 6%)"; (e.target as HTMLElement).style.borderColor = "transparent"; }}
+            >
+              Заказать проект
+            </button>
+          </div>
 
           <button className="md:hidden text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
             <Icon name={menuOpen ? "X" : "Menu"} size={20} />
